@@ -79,7 +79,8 @@ class Employee extends REST_Controller{
     //this is the function for deleting one record of the employee data by the emp_no
     public function index_delete(){
         //take the request from emp_no
-        $emp_no = $this->uri->segment(2);
+        // $emp_no = $this->uri->segment(2);
+        $emp_no = $this->delete('emp_no');
 
         //call the delete employee function on employee model with the array data parameter     
         $delete = $this->employee_model->delete_employee_by_emp_no($emp_no);
